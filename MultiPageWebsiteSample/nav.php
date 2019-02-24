@@ -20,11 +20,11 @@
 			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 				class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="index.php">PRODUCT ADMIN</a>
+		<a class="navbar-brand" href="#/dashboard">PRODUCT ADMIN</a>
 	</div>
 	<div class="navbar-collapse collapse">
 		<ul class="nav navbar-nav navbar-center">
-			<li><a href="index.php"><i class="fa fa-dashboard"
+			<li><a href="#/dashboard"><i class="fa fa-dashboard"
 					style="font-size: 36px; color: white"></i>
 				<div>Dashboard</div></a></li>
 
