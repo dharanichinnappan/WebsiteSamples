@@ -2,7 +2,10 @@ body {
 	background-color: #556989;
 	color: black;
 }
-
+.contentBody{
+	background-color: #556989;
+	
+}
 
 .navbar-default {
 	background-color: #495b77 ! important;
@@ -29,6 +32,11 @@ body {
 
 .navbar-brand:hover {
 	color: white;
+}
+
+.navbar-collapse .navbar-right{
+	height:100px;
+	line-height: 50px;
 }
 
 .navbar-collapse .dropdown-menu {

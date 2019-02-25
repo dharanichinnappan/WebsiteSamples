@@ -5,10 +5,11 @@
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css" />
+
 <script src="js/angular.js"></script>
 <script src="js/angular-route.js"></script>
 <script src="js/app.js"></script>
+<link rel="stylesheet" href="style.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -21,19 +22,18 @@
 	rel="stylesheet">
 </head>
 <body class="contentBody" ng-app="myApp">
-
-	<nav class="navbar navbar-default " role="navigation">
+	<nav class="navbar navbar-default " role="navigation" style="height: 100px;">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target=".navbar-collapse">
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.php">PRODUCT ADMIN</a>
+			<a class="navbar-brand" href="#/dashboard">PRODUCT ADMIN</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-center">
-				<li><a href="index.php"><i class="fa fa-dashboard"
+				<li><a href="#/dashboard"><i class="fa fa-dashboard"
 						style="font-size: 36px; color: white"></i>
 						<div>Dashboard</div></a></li>
 
@@ -48,11 +48,11 @@
 						<li><a href="#">Yearly Report</a></li>
 					</ul></li>
 
-				<li><a href="products.php"> <i class="material-icons"
+				<li><a href="#/products"> <i class="material-icons"
 						style="font-size: 36px; color: white;">shopping_cart</i>
 						<div>Products</div>
 				</a></li>
-				<li><a href="accounts.php"> <i class="material-icons"
+				<li><a href="#/accounts"> <i class="material-icons"
 						style="font-size: 36px; color: white;">account_box</i>
 						<div>Accounts</div>
 				</a></li>
@@ -68,40 +68,34 @@
 					</ul></li>
 			</ul>
 
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Admin, Logout</a></li>
-			</ul>
+			
 		</div>
 	</nav>
-	<div class="container-fluid">
-		<div class="text-center">
-			<div ng-view="myView">
 
-				<div class="col-sm-12 col-md-12 col-lg-12 accountSection ">
-					<div class=" accountInnerSection center-div">
-						<div class="headings">Welcome to Dashboard,Login</div>
-						<div class="col-sm-12 col-md-12 col-lg-12 ">
-							<div class="innerheadings">User Name</div>
-							<div>
-								<input type="text" class="input" />
-							</div>
-							<div class="innerheadings">Password</div>
-							<div>
-								<input type="password" class="input" />
-							</div>
 
-							<div>
-								<button class="productButton">LOGIN</button>
-							</div>
-							<div>
-								<button class="productButton">FORGOT YOUR PASSWORD</button>
-							</div>
-						</div>
-					</div>
+	<div class="col-sm-12 col-md-12 col-lg-12 accountSection ">
+		<div class=" accountInnerSection center-div">
+			<div class="headings">Welcome to Dashboard,Login</div>
+			<div class="col-sm-12 col-md-12 col-lg-12 ">
+				<div class="innerheadings">User Name</div>
+				<div>
+					<input type="text" class="input" />
+				</div>
+				<div class="innerheadings">Password</div>
+				<div>
+					<input type="password" class="input" />
+				</div>
+
+				<div>
+					<button class="productButton">LOGIN</button>
+				</div>
+				<div>
+					<button class="productButton">FORGOT YOUR PASSWORD</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 </body>
 </html>
