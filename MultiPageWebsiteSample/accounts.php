@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>        
+    <head>  
+     <title>Accounts</title>      
         <link rel="stylesheet" href="style.css" />       
     </head>
     <body >      

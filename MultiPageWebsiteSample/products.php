@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+<title>Products</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -46,11 +47,11 @@
                         ?>
                     </table>
 			</div>
-			<button class="productButton">ADD NEW PRODUCTS</button>
+			<a href="addProduct.php"><button class="productButton">ADD NEW PRODUCTS</button></a>
 			<button class="productButton">DELETE PRODUCTS</button>
 		</div>
 	</div>
-	
+
 	<div class="col-sm-3 col-md-3 col-lg-3 section">
 		<div class="col-sm-12 col-md-12 col-lg-12 innerSection">
 			<div style="color: white;">Product Categories</div>
@@ -60,7 +61,7 @@
                         <?php
                         $servername = "localhost";
                         $username = "root";
-                        $password = "Dharanic210";
+                        $password = "*********";
                         $dbname = "dashboard";
                         $conn = new mysqli($servername, $username, $password, $dbname);
                         $array = array();
