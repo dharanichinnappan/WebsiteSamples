@@ -69,7 +69,7 @@ else {
         header("Location:questions.php?n=" . $next_question_number . "");
     }
     
-  //  header("Location:questions.php?n=" . $next_question_number . "");
+ 
 }
 
 ?>
