@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Books Students</title>
+
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular-route.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body ng-app="myApp" ng-controller="bookController_student">
+
+
+	<h4 style="text-align: center">
+		<b>View Books</b>
+	</h4>
+	<div
+		class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 search">
+		<div class="col-sm-3 col-md-3 col-lg-3 rightText">View Books:</div>
+		<div class="col-sm-9 col-md-9 col-lg-9">
+			<select ng-model="viewbookoption" ng-change="checkAvailable()">
+				<option selected>all</option>
+				<option>Available</option>
+			</select>
+		</div>
+
+		<div class="col-sm-3 col-md-3 col-lg-3 rightText">Search Books:</div>
+		<div class="col-sm-9 col-md-9 col-lg-9">
+			<input type="text" ng-model="searchValue">
+		</div>
+
+		<div class="col-sm-3 col-md-3 col-lg-3 rightText">Sort Books:</div>
+		<div class="col-sm-9 col-md-9 col-lg-9">
+			<select ng-model="order_item">
+				<option value="">No Sort</option>
+				<option value="bookTitle">Book Title</option>
+				<option value="cost">cost</option>
+				<option value="author">Author</option>
+			</select>
+		</div>
+	</div>
+	<br />
+
+	<div class="col-sm-6 col-md-8 col-md-offset-2 col-lg-8">
+		<table ng-table="bookTable" style="width: 100%">
+			<tr>
+				<th>Sl.No.</th>
+				<th>Image</th>
+				<th>Details</th>
+			</tr>
+			<tr
+				ng-repeat="x in bookList |filter:searchValue | orderBy:order_item ">
+				<td align="center">{{$index+1}}</td>
+				<td><img src="{{x.imgUrl}}" width="150px" height="150px">
+				</td>
+				<td>
+				<div class="col-sm-12 col-md-12 col-lg-12" >
+				
+				<div class="col-sm-4 col-md-4 col-lg-4 rightText" >Book Id</div>
+				<div class="col-sm-1 col-md-1 col-lg-1" style="text-align: left">:</div>
+				<div class="col-sm-7 col-md-7 col-lg-7 leftText" >{{x.bookId}}</div>
+	
+				<div class="col-sm-4 col-md-4 col-lg-4 rightText" >Book Title</div>
+				<div class="col-sm-1 col-md-1 col-lg-1" style="text-align: left">:</div>
+				<div class="col-sm-7 col-md-7 col-lg-7 leftText" >{{x.bookTitle}}</div>
+				
+				<div class="col-sm-4 col-md-4 col-lg-4 rightText" >Book Author</div>
+				<div class="col-sm-1 col-md-1 col-lg-1" style="text-align: left">:</div>
+				<div class="col-sm-7 col-md-7 col-lg-7 leftText" >{{x.author}}</div>
+				
+				
+				<div class="col-sm-4 col-md-4 col-lg-4 rightText" > Book Cost</div>
+				<div class="col-sm-1 col-md-1 col-lg-1" style="text-align: left">:</div>
+				<div class="col-sm-7 col-md-7 col-lg-7 leftText" >Rs.{{x.cost}}</div>
+				</div>
+				
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	
+</body>
+</html>
