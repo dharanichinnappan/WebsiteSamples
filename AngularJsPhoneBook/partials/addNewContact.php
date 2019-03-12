@@ -13,11 +13,13 @@
 <body ng-app="myApp" ng-controller="AddNewContactCntrl">
 	<div class="col-sm-12 col-md-4 col-md-offset-4 col-lg-4 container">
 		<div class="col-sm-12 col-md-12 col-lg-12 outerContainer">
-			<div class="col-sm-12 col-md-12 col-lg-12 contacts ">
-			<div class="col-sm-1 col-md-1 col-lg-1" id="close"><a href="index.php"><i class="fa fa-close" ></i></a></div>
-			<div class="col-sm-8 col-md-8 col-lg-8">Add New Contact</div>
-			<div class="col-sm-3 col-lg-3 col-md-3" id="save" ng-click="save()"><a>SAVE</a></div>
-				
+			<div class="col-sm-12 col-md-12 col-lg-12 addNewContactsHeading ">
+				<div class="col-sm-1 col-md-1 col-lg-1" id="close">
+					<a href="index.php"><i class="fa fa-close"></i></a>
+				</div>
+				<div class="col-sm-11 col-md-11 col-lg-11">Add New Contact</div>
+
+
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-12">
 				<div>
@@ -29,9 +31,14 @@
 				<div>
 					<input type="text" ng-model="mobileNumber" placeholder="Phone">
 				</div>
-				
+				<div>
+					<input type="button" id="save" ng-click="save()" value="SAVE">
+				</div>
 			</div>
-			<div class="col-sm-12 col-md-12 col-lg-12" id="required">Enter all the details</div>
+
+			<!-- <div class="col-sm-3 col-lg-3 col-md-3" id="save" ng-click="save()"><a>SAVE</a></div> -->
+			<div class="col-sm-12 col-md-12 col-lg-12" id="required">Enter all
+				the details</div>
 
 		</div>
 

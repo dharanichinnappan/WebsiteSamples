@@ -1,47 +1,61 @@
-.container {
-	margin-top: 50px;
-}
 
 .outerContainer {
-	border: 1px solid blue;
-	padding: 0px;
-	height: 400px;
+	border: 1px solid black;
+	padding: 0px;	
 	overflow-y: auto;
 	margin-top: 20px;
 }
 
 .contacts {
-	color: white;
+	color: black;
 	font-size: 18px;
-	background-color: blue;
+	background-color: white;
 	font-weight: bold;
 	padding: 0px;
 }
 
-table {
-	width: 100%;
-}
-
-tr, td {
-	padding: 10px 0px;
-}
-
 a .plus {
 	font-size: 36px;
-	color: white;
+	color: black;
 }
+.plus:hover{
+	cursor: pointer;
+}
+.table{
+	padding:0px;
+}
+table {
+	width: 100%;
+	
+}
+th{
+	background-color: black;
+	color:white;
+}
+tr, td {
+	padding: 10px 0px;
+	border:1px solid black;
+}
+
+
 
 td:hover {
 	text-decoration: none;
 	cursor: pointer;
 }
 
-.rightAlign {
-	text-align: right;
-}
+
 
 .table tr:hover {
 	background-color: #6669f4;
+}
+
+.addNewContactsHeading{
+	background-color: black;
+	color:white;
+}
+.rightAlign {
+	text-align: right;
 }
 
 input {
@@ -50,9 +64,11 @@ input {
 	margin-top: 20px;
 }
 
-#save a {
+#save {
 	color: white;
+	background-color:black;
 	text-decoration: none;
+	margin-bottom: 20px;
 }
 
 #save a:hover {
@@ -60,7 +76,7 @@ input {
 }
 
 .fa-close {
-	color: white;
+	color:black;
 }
 
 #required {
@@ -93,7 +109,13 @@ input {
 	border-bottom: 1px solid gray;
 	font-size: 20px;
 }
-
+.contacts a{
+	color:black;
+}
+.contacts a:hover{
+	text-decoration: none;
+	cursor: pointer;
+}
 .contactDetails input {
 	padding: 0;
 	margin: 0;

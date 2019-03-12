@@ -8,7 +8,7 @@ $result = $conn->query($query);
 $row = $result->fetch_assoc();
 
 $name = $row['contactname'];
-$lastname=$row['lastname'];
+$lastname = $row['lastname'];
 
 ?>
 <html>
@@ -32,8 +32,7 @@ $lastname=$row['lastname'];
 						class="fa fa-close"></i></a>
 				</div>
 				<div class="col-sm-8 col-md-8 col-lg-8">Edit Contact</div>
-				<div class="col-sm-3 col-lg-3 col-md-3" id="save"
-					ng-click="saveChanges('<?php echo $name?>','<?php echo $lastname?>','<?php echo $number?>',firstName,lastName,mobileNumber)">
+				<div class="col-sm-3 col-lg-3 col-md-3"	id="saveChanges" ng-click="saveChanges('<?php echo $name?>','<?php echo $lastname?>','<?php echo $number?>',firstName,lastName,mobileNumber)">
 					<a>SAVE</a>
 				</div>
 
@@ -53,7 +52,7 @@ $lastname=$row['lastname'];
 
 					<div class="col-sm-1 col-md-1 col-lg-1"></div>
 					<div class="col-sm-11 col-md-11 col-lg-11">
-						<input type="text"  ng-model="lastName" >
+						<input type="text" ng-model="lastName">
 					</div>
 
 					<div class="col-sm-1 col-md-1 col-lg-1">

@@ -25,7 +25,8 @@ myApp.controller('AddNewContactCntrl', function($scope, $window, $http,
 	$scope.firstName = "";
 	$scope.lastName = "";
 	$scope.mobileNumber = "";
-	$scope.exists = 0;
+	$scope.exists = false;
+	$scope.details=false;
 	document.getElementById("required").style.display = "none";
 	$http({
 		method : 'get',
@@ -38,19 +39,20 @@ myApp.controller('AddNewContactCntrl', function($scope, $window, $http,
 
 		if ($scope.firstName != "" && $scope.lastName != ""
 				&& $scope.mobileNumber != "") {
+			$scope.details=true;
 			angular.forEach($scope.contactList, function(contact) {
 				if (contact['mobilenumber'] == $scope.mobileNumber) {
-					$scope.exists++;					
+					$scope.exists=false;					
 				}
 
 			})
 
-		} else if ($scope.firstName == "" || $scope.lastName == ""
-				|| $scope.mobileNumber == "") {
+		} else  {
 			document.getElementById("required").style.display = "block";
+			$scope.details=false;
 		}
 
-		if ($scope.exists == 0) {
+		if ($scope.exists == false && $scope.details==true) {
 			var data = {
 				firstName : $scope.firstName,
 				lastName : $scope.lastName,
@@ -114,7 +116,7 @@ myApp.controller('contactModifyCntrl', function($scope, $window,$http,$httpParam
 			+ $httpParamSerializerJQLike(data);
 		}
 	}
-	$scope.delete=function(number){
+	$scope.deleteContact=function(number){
 		$window.location = 'deleteContact.php?number=' + number;
 	}
 });

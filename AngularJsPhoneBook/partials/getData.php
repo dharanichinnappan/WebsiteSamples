@@ -1,13 +1,13 @@
 <?php include 'database.php'; ?>
 <?php
 
-$query = "select contactname,mobilenumber,image from contacts";
+$query = "select contactname,lastname,mobilenumber,image from contacts";
 $result = $conn->query($query);
 
 $contactList = array();
 
 while ($contacts = $result->fetch_assoc()) {
-    $contactList[]=['contactname'=> $contacts['contactname'],'mobilenumber'=>$contacts['mobilenumber'],'image'=>base64_encode($contacts['image'])];
+    $contactList[]=['contactname'=> $contacts['contactname'],'lastname'=>$contacts['lastname'],'mobilenumber'=>$contacts['mobilenumber'],'image'=>base64_encode($contacts['image'])];
     //$contactList[]=base64_encode($contacts['contactname']);
     
 }
