@@ -1,0 +1,131 @@
+.container {
+	margin-top: 50px;
+}
+
+.outerContainer {
+	border: 1px solid blue;
+	padding: 0px;
+	height: 400px;
+	overflow-y: auto;
+	margin-top: 20px;
+}
+
+.contacts {
+	color: white;
+	font-size: 18px;
+	background-color: blue;
+	font-weight: bold;
+	padding: 0px;
+}
+
+table {
+	width: 100%;
+}
+
+tr, td {
+	padding: 10px 0px;
+}
+
+a .plus {
+	font-size: 36px;
+	color: white;
+}
+
+td:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.rightAlign {
+	text-align: right;
+}
+
+.table tr:hover {
+	background-color: #6669f4;
+}
+
+input {
+	border: none;
+	border-bottom: 1px solid gray;
+	margin-top: 20px;
+}
+
+#save a {
+	color: white;
+	text-decoration: none;
+}
+
+#save a:hover {
+	cursor: pointer;
+}
+
+.fa-close {
+	color: white;
+}
+
+#required {
+	margin-top: 25px;
+}
+
+.contactImageContainer {
+	padding:0px;
+	border: 1px solid gray;
+	
+}
+.contactImage{
+	padding:0px;
+}
+
+.contactDetails {
+	border: 1px solid gray;
+	padding: 0;
+	margin-top: 10px;
+	border-radius: 12px;
+}
+
+.contactDetails div {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 0px;
+}
+
+.contactDetails .borderBottom {
+	border-bottom: 1px solid gray;
+	font-size: 20px;
+}
+
+.contactDetails input {
+	padding: 0;
+	margin: 0;
+}
+
+.fa {
+	font-size: 20px;
+}
+
+.contactModify {
+	text-align: right;
+}
+
+.contactModify i {
+	margin-left: 10px;
+}
+
+.fa-whatsapp {
+	color: white;
+	background-color: #0de51c;
+	padding:2px;
+	border-radius: 60px;
+}
+
+.fa-phone{
+	color:#0d55e5;
+}
+
+.fa-user{
+	color:#970fe0;
+}
+
+.fa-trash,.fa-arrow-left,.fa-pencil{
+	color:black;
+}
