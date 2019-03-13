@@ -6,9 +6,9 @@ myApp.controller('indexController', function($scope, $http, $window) {
 		method : 'get',
 		url : 'getData.php',
 	}).then(function successCallback(response) {
-		
-		$scope.contactList =response.data;
-		
+
+		$scope.contactList = response.data;
+
 	});
 
 	$scope.addNewContact = function() {
@@ -22,11 +22,12 @@ myApp.controller('indexController', function($scope, $http, $window) {
 });
 myApp.controller('AddNewContactCntrl', function($scope, $window, $http,
 		$location, $httpParamSerializerJQLike) {
+
 	$scope.firstName = "";
 	$scope.lastName = "";
 	$scope.mobileNumber = "";
 	$scope.exists = false;
-	$scope.details=false;
+	$scope.details = false;
 	document.getElementById("required").style.display = "none";
 	$http({
 		method : 'get',
@@ -35,24 +36,26 @@ myApp.controller('AddNewContactCntrl', function($scope, $window, $http,
 		$scope.contactList = response.data;
 
 	});
+
 	$scope.save = function() {
 
 		if ($scope.firstName != "" && $scope.lastName != ""
 				&& $scope.mobileNumber != "") {
-			$scope.details=true;
+			$scope.details = true;
 			angular.forEach($scope.contactList, function(contact) {
 				if (contact['mobilenumber'] == $scope.mobileNumber) {
-					$scope.exists=false;					
+					$scope.exists = false;
 				}
 
 			})
 
-		} else  {
+		} else {
 			document.getElementById("required").style.display = "block";
-			$scope.details=false;
+			$scope.details = false;
 		}
 
-		if ($scope.exists == false && $scope.details==true) {
+		if ($scope.exists == false && $scope.details == true) {
+
 			var data = {
 				firstName : $scope.firstName,
 				lastName : $scope.lastName,
@@ -74,49 +77,56 @@ myApp.controller('AddNewContactCntrl', function($scope, $window, $http,
 
 });
 
-myApp.controller('contactModifyCntrl', function($scope, $window,$http,$httpParamSerializerJQLike) {
-
+myApp.controller('contactModifyCntrl', function($scope, $window, $http,
+		$httpParamSerializerJQLike) {
 
 	$http({
 		method : 'get',
 		url : 'getData.php',
 	}).then(function successCallback(response) {
 		$scope.contactList = response.data;
-		$scope.firstName=$scope.name;
-		$scope.lastName=$scope.lastname;
-		$scope.mobileNumber=$scope.number;
-		
+		$scope.firstName = $scope.name;
+		$scope.lastName = $scope.lastname;
+		$scope.mobileNumber = $scope.number;
+
 	});
 
-	
-	$scope.backToDisplay=function(number){
+	$scope.backToDisplay = function(number) {
 		$window.location = 'display.php?number=' + number;
 	}
 	$scope.update = function(mobileNumber) {
-		
-		angular.forEach($scope.contactList,function(key){
-			
-			if(key['mobilenumber']==mobileNumber){
-				$scope.list=key['mobilenumber'];
-				
+
+		angular.forEach($scope.contactList, function(key) {
+
+			if (key['mobilenumber'] == mobileNumber) {
+				$scope.list = key['mobilenumber'];
+
 			}
 		});
-		
-		$window.location = 'modifyContact.php?number' + $httpParamSerializerJQLike($scope.list);;
-		//window.location.href="modifyContact.php"+"?"+$httpParamSerializerJQLike($scope.list);
+
+		$window.location = 'modifyContact.php?number'
+				+ $httpParamSerializerJQLike($scope.list);
+		;
+		// window.location.href="modifyContact.php"+"?"+$httpParamSerializerJQLike($scope.list);
 	};
-	
-	$scope.saveChanges=function(oldName,oldLastName,oldNumber,newName,newLastName,newNumber){
-		if(oldName==newName && oldNumber==newNumber && oldLastName==newLastName){
+
+	$scope.saveChanges = function(oldName, oldLastName, oldNumber, newName,
+			newLastName, newNumber) {
+		if (oldName == newName && oldNumber == newNumber
+				&& oldLastName == newLastName) {
 			$window.location = 'display.php?number=' + oldNumber;
-		}
-		else{
-			data={'newName':newName,'newLastName':newLastName,'oldNumber':oldNumber,'newNumber':newNumber};
+		} else {
+			data = {
+				'newName' : newName,
+				'newLastName' : newLastName,
+				'oldNumber' : oldNumber,
+				'newNumber' : newNumber
+			};
 			window.location.href = 'updateContact.php' + '?'
-			+ $httpParamSerializerJQLike(data);
+					+ $httpParamSerializerJQLike(data);
 		}
 	}
-	$scope.deleteContact=function(number){
+	$scope.deleteContact = function(number) {
 		$window.location = 'deleteContact.php?number=' + number;
 	}
 });

@@ -22,6 +22,7 @@
 
 			</div>
 			<div class="col-sm-12 col-md-12 col-lg-12">
+				  
 				<div>
 					<input type="text" ng-model="firstName" placeholder="First Name">
 				</div>
@@ -34,6 +35,7 @@
 				<div>
 					<input type="button" id="save" ng-click="save()" value="SAVE">
 				</div>
+
 			</div>
 
 			<!-- <div class="col-sm-3 col-lg-3 col-md-3" id="save" ng-click="save()"><a>SAVE</a></div> -->
